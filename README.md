@@ -2,9 +2,6 @@
 
 Timer Pomodoro com lista de tarefas para estudar com foco. Feito com **HTML, CSS e JavaScript puro**, sem bibliotecas.
 
-🔗 **Demo:** <!-- cole aqui o link do GitHub Pages -->
-
-![FocusFlow](screenshot.png)
 
 ## ✨ Funcionalidades
 
