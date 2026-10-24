@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pomodoro com lista de tarefas para estudar com foco.">
+  <title>FocusFlow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Focus<span>Flow</span></h1>
+      <p>Pomodoro + tarefas para estudar com foco</p>
+    </header>
+
+    <nav class="modes" id="modes" aria-label="Modo do timer">
+      <button class="mode active" data-min="25" data-label="Foco">Foco</button>
+      <button class="mode" data-min="5" data-label="Pausa">Pausa</button>
+      <button class="mode" data-min="15" data-label="Pausa longa">Pausa longa</button>
+    </nav>
+
+    <section class="timer" aria-live="off">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7c5cff"/>
+            <stop offset="1" stop-color="#22d3ee"/>
+          </linearGradient>
+        </defs>
+        <circle class="track" cx="60" cy="60" r="54"/>
+        <circle class="progress" id="ring" cx="60" cy="60" r="54"/>
+      </svg>
+      <div class="time">
+        <span id="time">25:00</span>
+        <small id="label">Foco</small>
+      </div>
+    </section>
+
+    <div class="controls">
+      <button class="btn primary" id="start">Iniciar</button>
+      <button class="btn ghost" id="reset">Reiniciar</button>
+    </div>
+
+    <p class="stats">🔥 Sessões de foco hoje: <strong id="sessions">0</strong></p>
+
+    <section class="tasks">
+      <h2>Tarefas <small><span id="left">0</span> pendentes</small></h2>
+      <form id="form">
+        <input id="input" type="text" placeholder="O que você vai estudar?" maxlength="80" autocomplete="off" aria-label="Nova tarefa">
+        <button class="btn primary" type="submit">+</button>
+      </form>
+      <ul id="list"></ul>
+    </section>
+
+    <footer>Dica: aperte <kbd>Espaço</kbd> para iniciar ou pausar.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
